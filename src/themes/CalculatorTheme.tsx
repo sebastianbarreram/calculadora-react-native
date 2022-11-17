@@ -1,17 +1,5 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import CalculatorScreen from './src/screens/CalculatorScreen';
-
-const App = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="black" />
-      <CalculatorScreen />
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
+import { StyleSheet } from 'react-native';
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
@@ -79,9 +67,15 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 12,
   },
+  button: {
+    width: 80,
+    height: 80,
+    borderRadius: 100,
+    backgroundColor: '#2d2d2d',
+    alignItems: 'center',
+    margin: 3,
+  },
   blackText: {
     color: 'black',
   },
 });
-
-export default App;
