@@ -5,7 +5,7 @@ import { styles } from '../themes/CalculatorTheme';
 interface Props {
   text: string;
   textColor?: string;
-  customWidth?: string;
+  buttontype?: string;
   color: string;
   action?: () => void;
 }
@@ -13,7 +13,7 @@ interface Props {
 export const Button = ({
   text,
   textColor = 'white',
-  customWidth = '80',
+  buttontype = 'common',
   color,
   action,
 }: Props) => {
@@ -21,15 +21,12 @@ export const Button = ({
     <TouchableOpacity
       style={{
         ...styles.button,
-        ...(customWidth === '80' ? null : styles.dobleButton),
+        ...(buttontype === 'common' ? null : styles.dobleButton),
         backgroundColor: color,
       }}
       onPress={action}>
       <Text
-        style={[
-          styles.text,
-          textColor === 'white' ? styles.text : styles.blackText,
-        ]}>
+        style={[styles.text, textColor === 'white' ? null : styles.blackText]}>
         {text}
       </Text>
     </TouchableOpacity>

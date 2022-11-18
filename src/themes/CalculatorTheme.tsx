@@ -1,66 +1,32 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const buttonMargin = 2;
+const screen = Dimensions.get('window');
+const buttonWidth = screen.width / 4 - buttonMargin * 2 - 11;
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
   },
   inputContainer: {
-    flex: 2,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    padding: 10,
-  },
-  inputMathOptions: {
-    // width: 90,
+    flex: 2.3,
     padding: 5,
-    backgroundColor: 'blue',
-    flex: 1,
   },
-  inputOptions: {
-    backgroundColor: 'red',
-    alignSelf: 'auto',
-    position: 'relative',
-  },
-  inputText: {
-    top: 30,
+  resultText: {
+    top: 100,
     right: 10,
     fontSize: 70,
     position: 'absolute',
     color: 'white',
   },
-  resultText: {
-    top: 120,
+  inputText: {
+    top: 30,
     right: 10,
     fontSize: 50,
     position: 'absolute',
     color: '#7c7c7c',
   },
-  operationButton: {
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    backgroundColor: '#ff9527',
-    alignItems: 'center',
-    margin: 3,
-  },
-  optionButton: {
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    backgroundColor: '#9b9b9b',
-    alignItems: 'center',
-    margin: 3,
-  },
-  numberButton: {
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    backgroundColor: '#2d2d2d',
-    alignItems: 'center',
-    margin: 3,
-  },
-  dobleButton: { width: 181 },
+  dobleButton: { width: buttonWidth * 2 + buttonMargin * 2 },
   text: {
     fontSize: 40,
     fontWeight: 'bold',
@@ -68,14 +34,18 @@ export const styles = StyleSheet.create({
     marginTop: 12,
   },
   button: {
-    width: 80,
-    height: 80,
+    width: buttonWidth,
+    height: buttonWidth,
     borderRadius: 100,
     backgroundColor: '#2d2d2d',
     alignItems: 'center',
-    margin: 3,
+    margin: buttonMargin,
   },
   blackText: {
     color: 'black',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
